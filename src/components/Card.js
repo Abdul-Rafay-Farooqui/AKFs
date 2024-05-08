@@ -14,7 +14,7 @@ const MediaCard = () => {
         {
             title: "Fine Flour",
             subtitle: "Fine Flourishing Flour",
-            picture: require("./images/pexels-pixabay-326082.jpg")
+            picture: require("./images/pexels-klaus-nielsen-6287223.jpg")
         },
         {
             title: "Mill Flour",

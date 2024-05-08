@@ -11,13 +11,13 @@ const Home = () => {
       image: require("../components/images/pexels-life-of-pix-9095.jpg")
     },
     {
-      image: require("../components/images/pexels-klaus-nielsen-6287223.jpg")
-    },
-    {
       image: require("../components/images/pexels-victorfreitas-703008.jpg")
     },
     {
       image: require("../components/images/pexels-towfiqu-barbhuiya-3440682-9797029.jpg")
+    },
+    {
+      image: require("../components/images/pexels-anthonyshkraba-production-8902067.jpg")
     }
   ];
 
@@ -47,7 +47,7 @@ const Home = () => {
 
   return (
     <>
-      <Grid container spacing={3} px={4} py={2} sx={{backgroundColor: "Black",color: "white", marginY:"1rem" }}>
+      <Grid container spacing={3} px={4} py={2} sx={{backgroundColor: "Black",color: "white", marginY:"0rem" }}>
         <Grid item xs={3}>
         <img src={require("../components/images/Logo.png")} alt="Your Image" style={{ width: '100%', height: "auto" }} />
         </Grid>
@@ -56,7 +56,7 @@ const Home = () => {
           Welcome to AKFs
         </Typography>
         <Typography sx={{fontSize: "20px"}}>
-          Where you can find flourishing health and flourishing flour
+          Where you can find flourishing health and flourishing flour, From all-purpose to specialty flours, we have everything you need for your culinary creations.
         </Typography>
         </Grid>
       </Grid>
