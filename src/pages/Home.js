@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../components/Card';
 import SliderImages from '../components/Slider';
-import { Grid, Typography } from '@mui/material';
+import { CardMedia, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 
@@ -20,6 +20,8 @@ const Home = () => {
       image: require("../components/images/pexels-towfiqu-barbhuiya-3440682-9797029.jpg")
     }
   ];
+
+  const logo = {logo: require("../components/images/Logo.png")}
 
   const settings = {
     dots: true,
@@ -45,13 +47,18 @@ const Home = () => {
 
   return (
     <>
-      <Grid sx={{backgroundColor: "#FFC72C", textAlign: "center", padding: "2rem", marginY:"1rem" }}>
+      <Grid container spacing={3} px={4} py={2} sx={{backgroundColor: "Black",color: "white", marginY:"1rem" }}>
+        <Grid item xs={3}>
+        <img src={require("../components/images/Logo.png")} alt="Your Image" style={{ width: '100%', height: "auto" }} />
+        </Grid>
+        <Grid item xs={8} sx={{textAlign:"center"}}>
         <Typography sx={{fontSize: "35px", p:"1rem"}}>
           Welcome to AKFs
         </Typography>
         <Typography sx={{fontSize: "20px"}}>
           Where you can find flourishing health and flourishing flour
         </Typography>
+        </Grid>
       </Grid>
       <Grid container sx={{ backgroundColor: "#FFC72C", paddingTop: "1rem",paddingBottom: "2rem", marginTop: "1rem" }}>
         <Grid  sx={{ width: "100%", order: { xs: 1, sm: 2 } }}>
@@ -66,7 +73,7 @@ const Home = () => {
           </div>
         </Grid>
       </Grid>
-      <Grid sx={{backgroundColor: "#FFC72C" , p:"2rem", my: "1rem", textAlign: "center"}}>
+      <Grid sx={{backgroundColor: "black", color:"white" , p:"2rem", my: "1rem", textAlign: "center"}}>
         <Typography sx={{fontSize: "25px"}}>
           Here We Have
         </Typography>

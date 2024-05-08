@@ -12,13 +12,13 @@ import "./Other.css";
 const MediaCard = () => {
     const data = [
         {
-            title: "White Flour",
-            subtitle: "White Flourishing Flour",
+            title: "Fine Flour",
+            subtitle: "Fine Flourishing Flour",
             picture: require("./images/pexels-pixabay-326082.jpg")
         },
         {
-            title: "Brown Flour",
-            subtitle: "Brown Flourishing Flour",
+            title: "Mill Flour",
+            subtitle: "Mill Flourishing Flour",
             picture: require("./images/pexels-pexelsgoodboy-3218467.jpg")
         },
     ]
@@ -42,8 +42,8 @@ const MediaCard = () => {
                 {card.subtitle} 
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button sx={{color: "#242424"}} size="small" color="inherit">See more</Button>
+            <CardActions sx={{backgroundColor: "black"}}>
+              <Button sx={{color: "#ffff"}} size="small" color="inherit">See more</Button>
             </CardActions>
           </Card>
          </Link>

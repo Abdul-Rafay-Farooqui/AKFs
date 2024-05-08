@@ -29,7 +29,7 @@ const Navbar = () => {
   ]
 
   const sideList = () => (
-    <div style={{ width: 230 , }}>
+    <div style={{ width: 230 ,backgroundColor: "#FFC72C" }}>
       <CloseIcon onClick={toggleDrawer} sx={{float:"right", fontSize:"2rem", padding: "1rem", cursor: "pointer"}}/>
       <Link to="/" className='side-link' onClick={toggleDrawer}>Home</Link>
       <Link to="/products" className='side-link' onClick={toggleDrawer}>Product</Link>
@@ -54,6 +54,7 @@ const Navbar = () => {
               <MenuIcon />
             </IconButton>
           )}
+          <img src={require("../components/images/Logo-removebg-preview.png")} alt="Your Image" style={{ height: "60px" }} />
           <Typography variant="h5" component="div" style={{ flexGrow: 1, color: '#242424' }}>
             AKFs
           </Typography>
@@ -61,7 +62,7 @@ const Navbar = () => {
           {!isMobile && (
             <React.Fragment>
               <Link className="nav-links" to="/">
-                Home
+                HOME
               </Link>
               <Link className="nav-links" to="/aboutus">
                 ABOUT US
@@ -77,7 +78,7 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
       {isMobile && (
-        <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer}>
+        <Drawer anchor="left"  open={isDrawerOpen} onClose={toggleDrawer}>
           {sideList()}
         </Drawer>
       )}
