@@ -42,13 +42,13 @@ const MediaCard = () => {
       id: "3",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
       name: "Fine Flour 5KG",
-      price: 700,
+      price: 350,
     },
     {
       id: "4",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
       name: "Fine Flour 10KG",
-      price: 350,
+      price: 700,
     },
   ];
   return (
