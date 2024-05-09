@@ -24,9 +24,7 @@ const Navbar = () => {
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
-  const image = [
-    {image: require("./images/Logo.png")}
-  ]
+ 
 
   const sideList = () => (
     <div style={{ width: 230 ,backgroundColor: "#FFC72C" }}>

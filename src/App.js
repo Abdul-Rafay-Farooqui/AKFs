@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
-import AboutUs from "./pages/SignUp";
+import AboutUs from "./pages/AboutUs";
 import LogIn from "./pages/LogIn";
 import { Provider } from "react-redux";
 import store from "./redux/Store";

@@ -15,7 +15,6 @@ const Footer = () => {
 
   return (
     <Box component="footer" style={footerStyle}>
-      
     </Box>
   );
 };
