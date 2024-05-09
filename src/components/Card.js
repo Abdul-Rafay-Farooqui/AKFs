@@ -1,56 +1,103 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { Grid } from '@mui/material';
-import { Link } from 'react-router-dom';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Grid } from "@mui/material";
+import { Link } from "react-router-dom";
 import "./Other.css";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/reducers/cartActions";
 
 const MediaCard = () => {
-    const data = [
-        {
-            title: "Fine Flour",
-            subtitle: "Fine Flourishing Flour",
-            picture: require("./images/pexels-klaus-nielsen-6287223.jpg")
-        },
-        {
-            title: "Mill Flour",
-            subtitle: "Mill Flourishing Flour",
-            picture: require("./images/pexels-pexelsgoodboy-3218467.jpg")
-        },
-    ]
+  const dispatch = useDispatch();
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
+
+  const addButtonStyle = {
+    backgroundColor: "black",
+    color: "#FFC72C",
+    width: "100%",
+    ":hover": { backgroundColor: "#fff", color: "black" },
+  };
+
+  const data = [
+    {
+      id: "1",
+      picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
+      name: "Fine Flour 5KG",
+      price: 325,
+    },
+    {
+      id: "2",
+      picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
+      name: "Fine Flour 10KG",
+      price: 650,
+    },
+    {
+      id: "3",
+      picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
+      name: "Fine Flour 5KG",
+      price: 700,
+    },
+    {
+      id: "4",
+      picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
+      name: "Fine Flour 10KG",
+      price: 350,
+    },
+  ];
   return (
     <Grid container spacing={2} pb={2} px={2} mt={0.5}>
-        {data.map((card)=>(
+      {data.map((card) => (
         <Grid item xs={6}>
-            <Link to="/cart" className='link-cards' >
-            <Card className='cards' sx={{ maxWidth: 700 , padding: 0, backgroundColor: "#FFC72C" , boxShadow: "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;" } }>
+          <Card
+            className="cards"
+            sx={{
+              maxWidth: 700,
+              padding: 0,
+              backgroundColor: "#FFC72C",
+              boxShadow:
+                "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;",
+            }}
+          >
             <CardMedia
-              sx={{  height: 200 }}
+              sx={{ height: 200 }}
               image={card.picture}
               title="Card"
-              className='media'
-              />
+              className="media"
+            />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div" color="#242424">
-                {card.title}
+              <Typography
+                textAlign={"center"}
+                gutterBottom
+                variant="h5"
+                component="div"
+                color="#242424"
+              >
+                {card.name}
               </Typography>
-              <Typography variant="body2" color="#242424">
-                {card.subtitle} 
+              <Typography variant="h6" textAlign={"center"} color="#242424">
+                Price : {card.price}
               </Typography>
             </CardContent>
-            <CardActions sx={{backgroundColor: "black"}}>
-              <Button sx={{color: "#ffff"}} size="small" color="inherit">Order Now</Button>
+            <CardActions
+              sx={{ backgroundColor: "#FFC72C", textAlign: "center" }}
+            >
+              <Button onClick={() => handleAddToCart(card)} sx={addButtonStyle}>
+                <ShoppingCartIcon />
+                ADD TO CART
+              </Button>
             </CardActions>
           </Card>
-         </Link>
         </Grid>
-        ))}            
+      ))}
     </Grid>
   );
-}
+};
 
-export default MediaCard
+export default MediaCard;
