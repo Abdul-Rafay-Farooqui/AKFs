@@ -43,7 +43,7 @@ const MediaCard = () => {
               </Typography>
             </CardContent>
             <CardActions sx={{backgroundColor: "black"}}>
-              <Button sx={{color: "#ffff"}} size="small" color="inherit">See more</Button>
+              <Button sx={{color: "#ffff"}} size="small" color="inherit">Order Now</Button>
             </CardActions>
           </Card>
          </Link>
