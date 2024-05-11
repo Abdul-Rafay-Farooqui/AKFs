@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Grid, Typography } from "@mui/material";
 import { baseColor } from "../components/styles/common";
 import Header from "../components/Header";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import CallIcon from "@mui/icons-material/Call";
+import EmailIcon from "@mui/icons-material/Email";
 
 const AboutUs = () => {
   const description =
@@ -102,13 +105,25 @@ const AboutUs = () => {
             marginBottom: "2rem",
           }}
         >
-          <Typography fontSize={"18px"}>
-            Experience the AKFs difference firsthand by visiting our store at
-            Plot no 1209, Street no 22, Block C, Toor Baba Road, Shershah,
-            Karachi. We look forward to welcoming you and serving you with
-            excellence.<br></br>Email: khanammad1818@gmail.com<br></br>Contact:
-            0341 162 990
-          </Typography>
+          <Grid container mx={"10rem"}>
+            <LocationOnIcon item xs={5} sx={{ fontSize: "40px" }} />
+            <Typography variant="h6" item xs={7} padding={"0.5rem 1rem"}>
+              Plot no 1209, Street no 22, Block C, Toor Baba Road, Shershah,
+              Karachi.
+            </Typography>
+          </Grid>
+          <Grid container mx={"10rem"}>
+            <CallIcon item xs={5} sx={{ fontSize: "40px" }} />
+            <Typography variant="h6" item xs={7} padding={"0.5rem 1rem"}>
+              0341 126 9900
+            </Typography>
+          </Grid>
+          <Grid container mx={"10rem"}>
+            <EmailIcon item xs={5} sx={{ fontSize: "40px" }} />
+            <Typography variant="h6" item xs={7} padding={"0.5rem 1rem"}>
+              khanammad1818@gmail.com
+            </Typography>
+          </Grid>
         </Grid>
       </Grid>
     </>
