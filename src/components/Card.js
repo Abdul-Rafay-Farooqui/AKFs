@@ -20,7 +20,7 @@ const MediaCard = () => {
 
   const addButtonStyle = {
     backgroundColor: "black",
-    color: "#FFC72C",
+    color: "#557153",
     width: "100%",
     ":hover": { backgroundColor: "#fff", color: "black" },
   };
@@ -30,25 +30,25 @@ const MediaCard = () => {
       id: "1",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
       name: "Fine Flour 5KG",
-      price: 325,
+      price: 700,
     },
     {
       id: "2",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
       name: "Fine Flour 10KG",
-      price: 650,
+      price: 1400,
     },
     {
       id: "3",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
       name: "Fine Flour 5KG",
-      price: 350,
+      price: 650,
     },
     {
       id: "4",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
       name: "Fine Flour 10KG",
-      price: 700,
+      price: 1300,
     },
   ];
   return (
@@ -60,7 +60,7 @@ const MediaCard = () => {
             sx={{
               maxWidth: 700,
               padding: 0,
-              backgroundColor: "#FFC72C",
+              backgroundColor: "#557153",
               boxShadow:
                 "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;",
             }}
@@ -77,16 +77,16 @@ const MediaCard = () => {
                 gutterBottom
                 variant="h5"
                 component="div"
-                color="#242424"
+                color="black"
               >
                 {card.name}
               </Typography>
-              <Typography variant="h6" textAlign={"center"} color="#242424">
+              <Typography variant="h6" textAlign={"center"} color="black">
                 Price : {card.price}
               </Typography>
             </CardContent>
             <CardActions
-              sx={{ backgroundColor: "#FFC72C", textAlign: "center" }}
+              sx={{ backgroundColor: "#557153", textAlign: "center" }}
             >
               <Button onClick={() => handleAddToCart(card)} sx={addButtonStyle}>
                 <ShoppingCartIcon />

@@ -16,13 +16,14 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSelector } from "react-redux";
+import { baseColor } from "./styles/common";
 
 const Navbar = () => {
   const cartItemQty = useSelector((state) => state.cart.items.length);
 
   return (
     <div>
-      <AppBar position="static" style={{ backgroundColor: "#FFC72C" }}>
+      <AppBar style={{ backgroundColor: baseColor, position: "static" }}>
         <Toolbar>
           <img
             src={require("../components/images/Logo-removebg-preview.png")}
