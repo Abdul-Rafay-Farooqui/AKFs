@@ -28,26 +28,26 @@ const MediaCard = () => {
   const data = [
     {
       id: "1",
-      picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
-      name: "Fine Flour 5KG",
+      picture: require("./images/last.jpg"),
+      orderItem: "Mill Flour 5KG",
       price: 700,
     },
     {
       id: "2",
-      picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
-      name: "Fine Flour 10KG",
+      picture: require("./images/last.jpg"),
+      orderItem: "Mill Flour 10KG",
       price: 1400,
     },
     {
       id: "3",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
-      name: "Fine Flour 5KG",
+      orderItem: "Fine Flour 5KG",
       price: 650,
     },
     {
       id: "4",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
-      name: "Fine Flour 10KG",
+      orderItem: "Fine Flour 10KG",
       price: 1300,
     },
   ];
@@ -79,7 +79,7 @@ const MediaCard = () => {
                 component="div"
                 color="black"
               >
-                {card.name}
+                {card.orderItem}
               </Typography>
               <Typography variant="h6" textAlign={"center"} color="black">
                 Price : {card.price}
