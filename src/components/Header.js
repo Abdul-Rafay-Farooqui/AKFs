@@ -14,8 +14,13 @@ const Header = ({ title, subtitle }) => {
         }}
       >
         <Typography
-          variant="h1"
-          style={{ padding: "2rem", marginBottom: "2rem" }}
+          sx={{
+            px: { xs: "1rem", md: "3rem" },
+            py: { xs: "3rem", md: "1rem" },
+            textAlign: "center",
+            mx: { xs: "1rem", md: "3rem" },
+            fontSize: { xs: "50px", md: "70px" },
+          }}
         >
           {title}
         </Typography>
@@ -23,12 +28,15 @@ const Header = ({ title, subtitle }) => {
         <img
           src={require("../components/images/Logo-removebg-preview.png")}
           alt="Your Image"
-          style={{
+          sx={{
             width: "40%",
-            height: "100%",
-            paddingBottom: "2rem",
+            maxWidth: "500px",
+            height: "500px",
+            paddingBottom: "1rem",
+          }}
+          style={{
             position: "relative",
-            top: "-10px",
+            top: "+10px",
           }}
         />
       </div>
@@ -36,10 +44,10 @@ const Header = ({ title, subtitle }) => {
       <div style={{ padding: "5rem 10rem", marginTop: "200px" }}>
         <Typography
           sx={{
-            px: "3rem",
+            px: { xs: "1rem", md: "3rem" },
             textAlign: "center",
-            mx: "3rem",
-            fontSize: "20px",
+            mx: { xs: "1rem", md: "3rem" },
+            fontSize: { xs: "16px", md: "20px" },
           }}
         >
           {subtitle}

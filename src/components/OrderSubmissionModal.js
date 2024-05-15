@@ -15,8 +15,10 @@ import { useState } from "react";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { baseColor } from "./styles/common";
 import emailjs from "@emailjs/browser";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useRef } from "react";
+import { empty } from "../redux/reducers/cartActions";
+import { Toaster, toast } from "react-hot-toast";
 
 export default function OrderSubmissionModal({ open, setOpen }) {
   const style = {
@@ -31,6 +33,10 @@ export default function OrderSubmissionModal({ open, setOpen }) {
     p: 4,
   };
   const handleClose = () => setOpen(false);
+  const dispatch = useDispatch();
+  const handleEmpty = () => {
+    dispatch(empty());
+  };
 
   const [loading, setLoading] = useState(false);
 
@@ -75,15 +81,34 @@ export default function OrderSubmissionModal({ open, setOpen }) {
     emailjs.send(serviceId, templateId, templateParams, publicKey).then(
       (response) => {
         setLoading(false);
+        handleEmpty();
         setOpen(false);
+        toast.success("Order Placed Successfully", {
+          duration: 3000,
+          style: {
+            borderRadius: "10px",
+            background: "#333",
+            color: "#fff",
+          },
+        });
       },
       (error) => {
+        toast.error("Sorry an error occur", {
+          duration: 3000,
+          style: {
+            borderRadius: "10px",
+            background: "#333",
+            color: "#fff",
+          },
+        });
         console.log("FAILED...", error.text);
       }
     );
   };
+
   return (
     <form>
+      <Toaster position="top-center" reverseOrder={false} />
       <Modal
         open={open}
         onClose={handleClose}

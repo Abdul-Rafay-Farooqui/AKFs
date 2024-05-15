@@ -62,9 +62,6 @@ const Cart = () => {
     dispatch(addToCart(item));
   };
 
-  const handleEmpty = () => {
-    dispatch(empty());
-  };
   const handleOpen = () => setOpen(true);
 
   return (
