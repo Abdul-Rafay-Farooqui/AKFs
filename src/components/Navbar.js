@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <AppBar style={{ backgroundColor: baseColor, position: "static" }}>
+      <AppBar style={{ backgroundColor: baseColor }}>
         <Toolbar>
           <img
             src={require("../components/images/Logo-removebg-preview.png")}
@@ -37,7 +37,6 @@ const Navbar = () => {
           >
             AKFs
           </Typography>
-
           <React.Fragment>
             <Link className="nav-links" to="/">
               HOME

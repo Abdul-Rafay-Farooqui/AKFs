@@ -6,6 +6,8 @@ import Header from "../components/Header";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
+import ContactUs from "../components/ContactUs.js";
+import Process from "../components/Process.js";
 
 const AboutUs = () => {
   const description =
@@ -26,10 +28,12 @@ const AboutUs = () => {
     },
     cardImage: {
       height: "200px",
+      width: "100%",
       border: "none",
       borderTopRightRadius: "10px",
       borderTopLeftRadius: "10px",
       marginBottom: 0,
+      objectFit: "cover",
       boxShadow:
         "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;",
     },
@@ -52,7 +56,7 @@ const AboutUs = () => {
             marginBottom: "1rem",
           }}
         >
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} lg={3}>
             <img
               src={require("../components/images/pexels-pixabay-326082.jpg")}
               style={styles.cardImage}
@@ -63,7 +67,7 @@ const AboutUs = () => {
             </Typography>
           </Grid>
 
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} lg={3}>
             <img
               src={require("../components/images/pexels-pixabay-54084.jpg")}
               style={styles.cardImage}
@@ -74,7 +78,7 @@ const AboutUs = () => {
             </Typography>
           </Grid>
 
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} lg={3}>
             <img
               src={require("../components/images/milling-processing1.gif")}
               style={styles.cardImage}
@@ -84,7 +88,7 @@ const AboutUs = () => {
             </Typography>
           </Grid>
 
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} lg={3}>
             <img
               src={require("../components/images/last.jpg")}
               style={styles.cardImage}
@@ -95,36 +99,8 @@ const AboutUs = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid style={{ padding: "1rem", textAlign: "center" }}>
-          <Typography variant="h3">Visit Us</Typography>
-        </Grid>
-
-        <Grid
-          style={{
-            padding: "2rem 10rem",
-            marginBottom: "2rem",
-          }}
-        >
-          <Grid container mx={"10rem"}>
-            <LocationOnIcon item xs={5} sx={{ fontSize: "40px" }} />
-            <Typography variant="h6" item xs={7} padding={"0.5rem 1rem"}>
-              Plot no 1209, Street no 22, Block C, Toor Baba Road, Shershah,
-              Karachi.
-            </Typography>
-          </Grid>
-          <Grid container mx={"10rem"}>
-            <CallIcon item xs={5} sx={{ fontSize: "40px" }} />
-            <Typography variant="h6" item xs={7} padding={"0.5rem 1rem"}>
-              0341 126 9900
-            </Typography>
-          </Grid>
-          <Grid container mx={"10rem"}>
-            <EmailIcon item xs={5} sx={{ fontSize: "40px" }} />
-            <Typography variant="h6" item xs={7} padding={"0.5rem 1rem"}>
-              khanammad1818@gmail.com
-            </Typography>
-          </Grid>
-        </Grid>
+        <Process />
+        <ContactUs />
       </Grid>
     </>
   );

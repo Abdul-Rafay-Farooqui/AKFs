@@ -27,7 +27,7 @@ const MediaCard = () => {
 
   const addButtonStyle = {
     backgroundColor: "black",
-    color: "#557153",
+    color: "#fff",
     width: "100%",
     ":hover": { backgroundColor: "#fff", color: "black" },
   };
@@ -61,7 +61,7 @@ const MediaCard = () => {
   return (
     <Grid container spacing={2} pb={2} px={2} mt={0.5}>
       {data.map((card) => (
-        <Grid item xs={6}>
+        <Grid item xs={3}>
           <Card
             className="cards"
             sx={{
@@ -84,11 +84,11 @@ const MediaCard = () => {
                 gutterBottom
                 variant="h5"
                 component="div"
-                color="black"
+                color="white"
               >
                 {card.name}
               </Typography>
-              <Typography variant="h6" textAlign={"center"} color="black">
+              <Typography variant="h6" textAlign={"center"} color="white">
                 Price : {card.price}
               </Typography>
             </CardContent>

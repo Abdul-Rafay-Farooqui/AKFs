@@ -11,6 +11,7 @@ const Header = ({ title, subtitle }) => {
           backgroundColor: baseColor,
           height: "60vh",
           textAlign: "center",
+          paddingTop: "3rem",
         }}
       >
         <Typography

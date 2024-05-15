@@ -67,7 +67,7 @@ const Cart = () => {
   return (
     <>
       <OrderSubmissionModal open={open} setOpen={setOpen} />
-      <Grid container>
+      <Grid container paddingTop="3rem">
         <Grid item xs={12} lg={cartItems.length > 0 ? 8 : 12} px={2}>
           <CartPage
             sx={{
@@ -149,7 +149,7 @@ const Cart = () => {
 
                       <Grid item xs={3} sx={{ textAlign: "right" }}>
                         <Typography fontSize={{ lg: "20px", xs: "h3" }}>
-                          ${item.total_item_price}
+                          {item.total_item_price}.Rs
                         </Typography>
                       </Grid>
                       <Grid
@@ -203,7 +203,7 @@ const Cart = () => {
                       Order Total
                     </Grid>
                     <Grid item xs={1} color={"black"}>
-                      ${total}
+                      {total}.Rs
                     </Grid>
                   </Grid>
                 </ListItem>
@@ -213,7 +213,7 @@ const Cart = () => {
                       Shipping
                     </Grid>
                     <Grid item xs={1} color={"black"}>
-                      ${shipping}
+                      {shipping + 70}.Rs
                     </Grid>
                   </Grid>
                 </ListItem>
@@ -223,7 +223,7 @@ const Cart = () => {
                       Discount%
                     </Grid>
                     <Grid item xs={1} color={"black"}>
-                      ${discount}
+                      {discount}.Rs
                     </Grid>
                   </Grid>
                 </ListItem>
@@ -233,7 +233,7 @@ const Cart = () => {
                       Tax
                     </Grid>
                     <Grid item xs={1} color={"black"}>
-                      ${tax}
+                      {tax}.Rs
                     </Grid>
                   </Grid>
                 </ListItem>
@@ -243,7 +243,7 @@ const Cart = () => {
                       Total Bill
                     </Grid>
                     <Grid item xs={1} color={"black"}>
-                      ${total}
+                      {total + 70}.Rs
                     </Grid>
                     <Grid item xs={12} marginTop={4} textAlign={"center"}>
                       <Button

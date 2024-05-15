@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import Header from "../components/Header";
 import { baseColor } from "../components/styles/common";
+import ContactUs from "../components/ContactUs.js";
 
 const Home = () => {
   const description =
@@ -92,6 +93,7 @@ const Home = () => {
         <Typography variant="h3">Here We Have</Typography>
       </Grid>
       <Card />
+      <ContactUs />
     </>
   );
 };
