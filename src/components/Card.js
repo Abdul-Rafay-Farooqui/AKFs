@@ -15,7 +15,14 @@ import { addToCart } from "../redux/reducers/cartActions";
 const MediaCard = () => {
   const dispatch = useDispatch();
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
+    const item = {
+      id: product.id,
+      picture: product.picture,
+      name: product.name,
+      quantity: 1,
+      price: product.price,
+    };
+    dispatch(addToCart(item));
   };
 
   const addButtonStyle = {
@@ -29,25 +36,25 @@ const MediaCard = () => {
     {
       id: "1",
       picture: require("./images/last.jpg"),
-      orderItem: "Mill Flour 5KG",
+      name: "Mill Flour 5KG",
       price: 700,
     },
     {
       id: "2",
       picture: require("./images/last.jpg"),
-      orderItem: "Mill Flour 10KG",
+      name: "Mill Flour 10KG",
       price: 1400,
     },
     {
       id: "3",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
-      orderItem: "Fine Flour 5KG",
+      name: "Fine Flour 5KG",
       price: 650,
     },
     {
       id: "4",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
-      orderItem: "Fine Flour 10KG",
+      name: "Fine Flour 10KG",
       price: 1300,
     },
   ];
@@ -79,7 +86,7 @@ const MediaCard = () => {
                 component="div"
                 color="black"
               >
-                {card.orderItem}
+                {card.name}
               </Typography>
               <Typography variant="h6" textAlign={"center"} color="black">
                 Price : {card.price}

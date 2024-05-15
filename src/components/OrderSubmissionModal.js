@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import {
+  CircularProgress,
   FormControl,
   Input,
   InputLabel,
@@ -31,35 +32,50 @@ export default function OrderSubmissionModal({ open, setOpen }) {
   };
   const handleClose = () => setOpen(false);
 
+  const [loading, setLoading] = useState(false);
+
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
   const form = useRef();
-  const cartItems = useSelector((state) => state.cart.items) || [];
+  const items = useSelector((state) => state.cart.items) || [];
   const total = useSelector((state) => state.cart.total) || 0;
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-
+    if (email == "" || phoneNumber == "" || address == "" || city == "") {
+      alert("All input feilds are required");
+    }
+    setLoading(true);
     const serviceId = "service_82sknmp";
     const templateId = "template_ni8j9fs";
     const publicKey = "1igbTf7Yt7vqYufOG";
 
-    const info = {
-      email: name,
+    const cartItems = items.map((item) => {
+      return {
+        key: item.id,
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price,
+      };
+    });
+
+    const templateParams = {
+      name: name,
+      email: email,
       phoneNumber: phoneNumber,
       address: address,
       city: city,
-      quantity: cartItems.items.quantity,
-      orderItem: cartItems.items.name,
-      total: total.total_item_price,
+      orderitems: cartItems,
+      total: total,
     };
 
-    emailjs.send(serviceId, templateId, info, publicKey).then(
+    emailjs.send(serviceId, templateId, templateParams, publicKey).then(
       (response) => {
-        console.log("SUCCESS!", response);
+        setLoading(false);
+        setOpen(false);
       },
       (error) => {
         console.log("FAILED...", error.text);
@@ -83,7 +99,7 @@ export default function OrderSubmissionModal({ open, setOpen }) {
             type="text"
             size="small"
             fullWidth
-            values={name}
+            value={name}
             onChange={(e) => setName(e.target.value)}
             required
             sx={{ marginBottom: "1rem" }}
@@ -134,18 +150,24 @@ export default function OrderSubmissionModal({ open, setOpen }) {
             sx={{ marginBottom: "1rem" }}
           />
 
-          <Button
-            sx={{
-              width: "100%",
-              backgroundColor: "#557153",
-              color: "black",
-              marginTop: "20px",
-              ":hover": { color: "#557153", backgroundColor: baseColor },
-            }}
-            onClick={onSubmit}
-          >
-            Place Order
-          </Button>
+          {loading ? (
+            <center>
+              <CircularProgress color="success" />
+            </center>
+          ) : (
+            <Button
+              sx={{
+                width: "100%",
+                backgroundColor: "#557153",
+                color: "black",
+                marginTop: "20px",
+                ":hover": { color: "#557153", backgroundColor: baseColor },
+              }}
+              onClick={onSubmit}
+            >
+              Place Order
+            </Button>
+          )}
         </Box>
       </Modal>
     </form>
