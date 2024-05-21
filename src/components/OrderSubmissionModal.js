@@ -5,18 +5,15 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import {
   CircularProgress,
-  FormControl,
-  Input,
   InputLabel,
   MenuItem,
   TextField,
 } from "@mui/material";
 import { useState } from "react";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import { baseColor } from "./styles/common";
 import emailjs from "@emailjs/browser";
 import { useDispatch, useSelector } from "react-redux";
-import { useRef } from "react";
 import { empty } from "../redux/reducers/cartActions";
 import { Toaster, toast } from "react-hot-toast";
 
@@ -45,13 +42,12 @@ export default function OrderSubmissionModal({ open, setOpen }) {
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
-  const form = useRef();
   const items = useSelector((state) => state.cart.items) || [];
   const total = useSelector((state) => state.cart.total) || 0;
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (email == "" || phoneNumber == "" || address == "" || city == "") {
+    if (email === "" || phoneNumber === "" || address === "" || city === "") {
       alert("All input feilds are required");
     }
     setLoading(true);

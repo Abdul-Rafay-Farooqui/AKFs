@@ -1,20 +1,8 @@
-import React, { useState } from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  InputBase,
-  IconButton,
-  Drawer,
-  useMediaQuery,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import StoreIcon from "@mui/icons-material/Store";
-import SearchIcon from "@mui/icons-material/Search";
+import React from "react";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import CloseIcon from "@mui/icons-material/Close";
 import { useSelector } from "react-redux";
 import { baseColor } from "./styles/common";
 
@@ -27,7 +15,7 @@ const Navbar = () => {
         <Toolbar>
           <img
             src={require("../components/images/Logo-removebg-preview.png")}
-            alt="Your Image"
+            alt="Your img"
             style={{ height: "60px" }}
           />
           <Typography

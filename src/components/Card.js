@@ -61,7 +61,7 @@ const MediaCard = () => {
   return (
     <Grid container spacing={2} pb={2} px={2} mt={0.5}>
       {data.map((card) => (
-        <Grid item xs={3}>
+        <Grid item xs={6} md={3}>
           <Card
             className="cards"
             sx={{

@@ -1,11 +1,6 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { Grid, Typography } from "@mui/material";
-import { baseColor } from "../components/styles/common";
 import Header from "../components/Header";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import CallIcon from "@mui/icons-material/Call";
-import EmailIcon from "@mui/icons-material/Email";
 import ContactUs from "../components/ContactUs.js";
 import Process from "../components/Process.js";
 
@@ -59,6 +54,7 @@ const AboutUs = () => {
           <Grid item xs={12} sm={6} lg={3}>
             <img
               src={require("../components/images/pexels-pixabay-326082.jpg")}
+              alt="sorry can't find an img"
               style={styles.cardImage}
             />
             <Typography style={styles.cardCaptions}>
@@ -70,6 +66,7 @@ const AboutUs = () => {
           <Grid item xs={12} sm={6} lg={3}>
             <img
               src={require("../components/images/pexels-pixabay-54084.jpg")}
+              alt="sorry can't find an img"
               style={styles.cardImage}
             />
             <Typography style={styles.cardCaptions}>
@@ -81,6 +78,7 @@ const AboutUs = () => {
           <Grid item xs={12} sm={6} lg={3}>
             <img
               src={require("../components/images/milling-processing1.gif")}
+              alt="sorry can't find an img"
               style={styles.cardImage}
             />
             <Typography style={styles.cardCaptions}>
@@ -91,6 +89,7 @@ const AboutUs = () => {
           <Grid item xs={12} sm={6} lg={3}>
             <img
               src={require("../components/images/last.jpg")}
+              alt="sorry can't find an img"
               style={styles.cardImage}
               width={"100%"}
             />

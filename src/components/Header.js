@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Grid, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { baseColor } from "../components/styles/common";
 
 const Header = ({ title, subtitle }) => {
@@ -28,7 +27,7 @@ const Header = ({ title, subtitle }) => {
 
         <img
           src={require("../components/images/Logo-removebg-preview.png")}
-          alt="Your Image"
+          alt="Your img"
           sx={{
             width: "40%",
             maxWidth: "500px",

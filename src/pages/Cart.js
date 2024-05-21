@@ -1,33 +1,22 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  empty,
-  decQty,
-  incQty,
-  removeFromCart,
-} from "../redux/reducers/cartActions";
+import { decQty, removeFromCart } from "../redux/reducers/cartActions";
 import { addToCart } from "../redux/reducers/cartActions";
 import {
-  Container,
   Typography,
   List,
   ListItem,
-  ListItemText,
   ListItemAvatar,
   Avatar,
   IconButton,
   Button,
-  colors,
   Grid,
 } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
 import Close from "@mui/icons-material/Close";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { styled } from "@mui/system";
 import "../components/Other.css";
 import Remove from "@mui/icons-material/Remove";
 import Add from "@mui/icons-material/Add";
-import { red } from "@mui/material/colors";
 import OrderSubmissionModal from "../components/OrderSubmissionModal";
 
 const CartPage = styled("div")({
@@ -53,7 +42,7 @@ const Cart = () => {
 
   const handleRemove = (itemId, itemQuantity) => {
     dispatch(decQty(itemId));
-    if (itemQuantity - 1 == 0) {
+    if (itemQuantity - 1 === 0) {
       handleDelete(itemId);
     }
   };
