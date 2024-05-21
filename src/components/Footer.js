@@ -23,14 +23,14 @@ const Footer = () => {
       </Typography>
       <div>
         <Link
-          href="https://www.facebook.com/yourpage"
+          href="https://www.facebook.com/profile.php?id=61559387822102"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FacebookIcon style={{ fontSize: "35px", color: "black" }} />
         </Link>
         <Link
-          href="https://www.instagram.com/yourpage"
+          href="https://www.instagram.com/akflours/"
           target="_blank"
           rel="noopener noreferrer"
         >
