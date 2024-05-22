@@ -7,7 +7,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Grid } from "@mui/material";
-import { Link } from "react-router-dom";
 import "./Other.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/reducers/cartActions";
@@ -37,24 +36,28 @@ const MediaCard = () => {
       id: "1",
       picture: require("./images/last.jpg"),
       name: "Mill Flour 5KG",
+      cname: "Chakki Aata",
       price: 700,
     },
     {
       id: "2",
       picture: require("./images/last.jpg"),
       name: "Mill Flour 10KG",
+      cname: "Chakki Aata",
       price: 1400,
     },
     {
       id: "3",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
       name: "Fine Flour 5KG",
+      cname: "White Aata",
       price: 650,
     },
     {
       id: "4",
       picture: require("./images/pexels-klaus-nielsen-6287223.jpg"),
       name: "Fine Flour 10KG",
+      cname: "White Aata",
       price: 1300,
     },
   ];
@@ -87,6 +90,15 @@ const MediaCard = () => {
                 color="white"
               >
                 {card.name}
+              </Typography>
+              <Typography
+                textAlign={"center"}
+                gutterBottom
+                variant="h5"
+                component="div"
+                color="white"
+              >
+                ({card.cname})
               </Typography>
               <Typography variant="h6" textAlign={"center"} color="white">
                 Price : {card.price}
