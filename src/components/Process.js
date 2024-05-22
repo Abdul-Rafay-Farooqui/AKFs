@@ -34,6 +34,7 @@ const Process = () => {
         <Grid container key={item} style={{ marginBottom: "2rem" }}>
           <Grid item xs={10} md={6} lg={5} paddingRight="2rem">
             <img
+              alt="error"
               style={{
                 objectFit: "cover",
                 border: "none",

@@ -1,11 +1,8 @@
 import React from "react";
 import Card from "../components/Card";
-import SliderImages from "../components/Slider";
-import { CardMedia, Grid, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Grid, Typography } from "@mui/material";
 import Slider from "react-slick";
 import Header from "../components/Header";
-import { baseColor } from "../components/styles/common";
 import ContactUs from "../components/ContactUs.js";
 
 const Home = () => {
@@ -35,13 +32,6 @@ const Home = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-  };
-
-  const areaLinksStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    marginBottom: "10px",
   };
 
   const sliderContainerStyle = {
