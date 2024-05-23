@@ -15,10 +15,10 @@ const Header = ({ title, subtitle }) => {
       >
         <Typography
           sx={{
-            px: { xs: "1rem", md: "3rem" },
+            px: { xs: "0rem", md: "3rem" },
             py: { xs: "3rem", md: "1rem" },
             textAlign: "center",
-            mx: { xs: "1rem", md: "3rem" },
+            mx: { xs: "0rem", md: "3rem" },
             fontSize: { xs: "50px", md: "70px" },
           }}
         >
@@ -29,9 +29,9 @@ const Header = ({ title, subtitle }) => {
           src={require("../components/images/Logo-removebg-preview.png")}
           alt="Your img"
           sx={{
-            width: "40%",
+            width: { xs: "90%", md: "40%" },
             maxWidth: "500px",
-            height: "500px",
+            height: { xs: "100px", md: "500px" },
             paddingBottom: "1rem",
           }}
           style={{
@@ -41,12 +41,12 @@ const Header = ({ title, subtitle }) => {
         />
       </div>
 
-      <div style={{ padding: "5rem 10rem", marginTop: "200px" }}>
+      <div style={{ padding: "5rem 1rem", marginTop: "200px" }}>
         <Typography
           sx={{
-            px: { xs: "1rem", md: "3rem" },
+            px: { xs: "3rem", md: "3rem" },
             textAlign: "center",
-            mx: { xs: "1rem", md: "3rem" },
+            mx: { xs: "0rem", md: "3rem" },
             fontSize: { xs: "16px", md: "20px" },
           }}
         >
