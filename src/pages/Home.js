@@ -1,38 +1,13 @@
 import React from "react";
 import Card from "../components/Card";
 import { Grid, Typography } from "@mui/material";
-import Slider from "react-slick";
+import SliderImages from "../components/Slider.js";
 import Header from "../components/Header";
 import ContactUs from "../components/ContactUs.js";
 
 const Home = () => {
   const description =
     "Where you can find flourishing health and flourishing flour, From all-purpose to specialty flours, we have everything you need for your culinary creations.";
-  const images = [
-    {
-      image: require("../components/images/pexels-life-of-pix-9095.jpg"),
-    },
-    {
-      image: require("../components/images/pexels-victorfreitas-703008.jpg"),
-    },
-    {
-      image: require("../components/images/pexels-towfiqu-barbhuiya-3440682-9797029.jpg"),
-    },
-    {
-      image: require("../components/images/pexels-anthonyshkraba-production-8902067.jpg"),
-    },
-  ];
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-  };
 
   const sliderContainerStyle = {
     maxWidth: "100%",
@@ -53,22 +28,7 @@ const Home = () => {
       >
         <Grid sx={{ width: "100%", height: "300px", order: { xs: 1, sm: 2 } }}>
           <div style={sliderContainerStyle}>
-            <Slider {...settings}>
-              {images.map((i, index) => (
-                <div key={index}>
-                  <img
-                    src={i.image}
-                    alt={`Slide ${index}`}
-                    style={{
-                      width: "95%",
-                      height: "450px",
-                      borderRadius: "20px",
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-              ))}
-            </Slider>
+            <SliderImages />
           </div>
         </Grid>
       </Grid>
