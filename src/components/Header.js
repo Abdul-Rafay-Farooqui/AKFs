@@ -1,50 +1,36 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { baseColor } from "../components/styles/common";
-
+import "./Other.css";
 const Header = ({ title, subtitle }) => {
   return (
     <>
-      <div
-        style={{
-          backgroundColor: baseColor,
-          height: "60vh",
-          textAlign: "center",
-          paddingTop: "3rem",
-        }}
-      >
+      <div className="d2">
         <Typography
           sx={{
-            px: { xs: "0rem", md: "3rem" },
-            py: { xs: "3rem", md: "1rem" },
+            pt: { xs: "3rem", md: "5rem" },
             textAlign: "center",
-            mx: { xs: "0rem", md: "3rem" },
-            fontSize: { xs: "50px", md: "70px" },
+            fontSize: { xs: "35px", sm: "70px" },
           }}
         >
           {title}
         </Typography>
 
-        <img
-          src={require("../components/images/Logo-removebg-preview.png")}
-          alt="Your img"
-          sx={{
-            width: { xs: "90%", md: "40%" },
-            maxWidth: "500px",
-            height: { xs: "100px", md: "500px" },
-            paddingBottom: "1rem",
-          }}
-          style={{
-            position: "relative",
-            top: "+10px",
-          }}
-        />
+        <div className="imagediv">
+          <img
+            src={require("../components/images/Logo-removebg-preview.png")}
+            alt="Your img"
+            style={{ height: "100%", width: "100%" }}
+          />
+        </div>
       </div>
 
-      <div style={{ padding: "5rem 1rem", marginTop: "200px" }}>
+      <div>
         <Typography
           sx={{
-            px: { xs: "3rem", md: "3rem" },
+            mt: { xs: "150px", md: "200px" },
+            pt: { xs: "1rem", md: "2rem" },
+            px: { xs: "1rem", md: "3rem" },
+            pb: "3rem",
             textAlign: "center",
             mx: { xs: "0rem", md: "3rem" },
             fontSize: { xs: "16px", md: "20px" },
